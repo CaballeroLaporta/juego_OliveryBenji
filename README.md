@@ -7,7 +7,7 @@
 
 
 ## MVP - Técnología
-
+***
 
 ### Los balones se desplazan de la parte superior de la pantalla de forma random y van cayendo de forma vertical.
 
@@ -19,7 +19,7 @@
 
 
 ## Backlog
-
+***
 - Si el player para el balón (colisión), se le suma un punto.
 
 - Si el player no suma un numero de puntos en un tiempo determinado, pierda la partida.
@@ -34,11 +34,14 @@
 
 
 ## Estructura de Datos
-
+***
 ### Ficheros
 - index.html
 - js
   - main.js
+  - game.js
+  - player.js
+  - ball.js
 - css
 
 #### main.js
@@ -91,7 +94,7 @@
 ```
 
 ## Tasks
-
+*** 
 1. Draw Board 
 2. Draw Player
 3. Left-right player Move
