@@ -108,3 +108,6 @@
 
 
 
+## Trello
+
+- https://trello.com/b/i8J48VrD/juego-modulo-1-ih
