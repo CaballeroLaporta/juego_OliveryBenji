@@ -1,23 +1,29 @@
 // Creación del constructor(clase)
-function Game(ctx) {
-  this.player = new Player()
-  this.ball = new Ball()
-  this.rows = 50;
-  this.columns = 50;
+function Game(ctx, canvas) {
   this.ctx = ctx;
+  this.width = canvas.width;
+  this.height = canvas.height;
+
+
+  this.player = new Player(this.ctx,this.width,this.height)
+
+  // this.ball = new Ball()
   this.doFrame()
 }
 
 //Creación del método dentro del constructor Game
 Game.prototype._drawBoard = function () {
-  for (var columnIndex = 0; columnIndex < this.columns; columnIndex++) {
-    for (var rowIndex = 0; rowIndex < this.rows; rowIndex++) {
-      this.ctx.fillStyle = "#E3D4AB";
-      this.ctx.fillRect(columnIndex * 10, rowIndex * 10, 10, 10);
-    }
-  }
+  this.ctx.fillStyle="#00EE00";
+  this.ctx.fillRect(0,0,this.width,this.height);
+
 }
 
 Game.prototype.doFrame = function () {
+  var self = this;
     this._drawBoard();
+    this.player._draw();
+
+    window.requestAnimationFrame(function(){
+      self.doFrame()
+    })
 }

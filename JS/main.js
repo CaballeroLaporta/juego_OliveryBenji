@@ -22,7 +22,7 @@ function main() {
     canvas.setAttribute("height", "500");
     gameContainer.appendChild(canvas)
     var ctx = canvas.getContext("2d");
-    var game = new Game(ctx);
+    var game = new Game(ctx, canvas);
   }
   
   function destroyGame() {
