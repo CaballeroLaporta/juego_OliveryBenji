@@ -23,6 +23,7 @@ function main() {
     gameContainer.appendChild(canvas)
     var ctx = canvas.getContext("2d");
     var game = new Game(ctx, canvas);
+    game.start();
   }
   
   function destroyGame() {
