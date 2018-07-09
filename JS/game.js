@@ -8,9 +8,7 @@ function Game(ctx, canvas) {
 
 
   this.player = new Player(this.ctx,this.width,this.height)
-  this.ball = new Ball(this.ctx,this.width,this.height); // falta hacer la clase game
-
-  // this.ball = new Ball()
+  this.ball = new Ball(this.ctx,this.width,this.height); 
  
 }
 
@@ -30,8 +28,9 @@ Game.prototype._doFrame = function () {
   var self = this;
     this._drawBoard();
     this.player._draw();
-    //this.player._position();
+   
     this.ball._drawBall();
+    this.ball._position();
     if (this.upPressed) {
       this.player.upMovement();
     }

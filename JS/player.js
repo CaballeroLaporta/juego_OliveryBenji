@@ -10,7 +10,10 @@ function Player(ctx,canvasWidth,canvasHeight){
 }
 
 
+// Player.prototype._position = function(){
+//   this.positionY -= 1 ;
 
+// };
 
 Player.prototype._draw = function () {
   this.ctx.fillStyle="#990000";
