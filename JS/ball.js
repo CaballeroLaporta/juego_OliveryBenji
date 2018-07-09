@@ -2,8 +2,8 @@ function Ball(ctx,canvasWidth,canvasHeight){
   this.ctx = ctx;
   this.height = 20;
   this.width = 20;
-  this.positionX = canvasWidth - this.width/2;
-  this.positionY = canvasHeight - this.height* 3;
+  this.positionY = canvasWidth/2 - this.width/2;
+  this.positionX = 0;
 
 }
 
@@ -18,4 +18,3 @@ Ball.prototype._drawBall = function () {
   this.ctx.fillRect(this.positionX,this.positionY,this.width,this.height);
 
 };
-
