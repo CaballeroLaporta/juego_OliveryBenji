@@ -1,6 +1,7 @@
 // Creación del constructor(clase)
-function Game(ctx, canvas) {
+function Game(ctx, canvas, cb) {
   this.ctx = ctx;
+  this.callback = cb;
   this.width = canvas.width;
   this.height = canvas.height;
   this.upPressed = false;
@@ -19,6 +20,8 @@ Game.prototype._checkGoal = function () {
   if (this.ball) {
     if(this.ball.positionX > 500){
       console.log("Goal");
+      this.callback();
+
       this.ball = null;
     };
   };

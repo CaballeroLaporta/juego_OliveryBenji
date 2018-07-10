@@ -22,14 +22,14 @@ function main() {
     canvas.setAttribute("height", "500");
     gameContainer.appendChild(canvas)
     var ctx = canvas.getContext("2d");
-    var game = new Game(ctx, canvas);
+    var game = new Game(ctx, canvas, destroyGame);
     game.start();
   }
   
   function destroyGame() {
-    var canvas = document.querySelector("canvas")
-    canvas.remove()
-    buildGameOver()
+    var canvas = document.querySelector("canvas");
+    canvas.remove();
+    buildGameOver();
   }
 
   function buildGameOver() {
