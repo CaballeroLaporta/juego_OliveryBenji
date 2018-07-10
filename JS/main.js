@@ -5,8 +5,14 @@ function main() {
   
   function buildSplash() {
     var btn = document.createElement("button");
+    var text = document.createElement("h1");
+    var subtext = document.createElement("h2");
+    text.innerText = "Oliver y Benji";
+    subtext.innerText = "The last penalty"
     btn.innerText = "Start Game"
-    gameContainer.appendChild(btn)
+    gameContainer.appendChild(text);
+    gameContainer.appendChild(subtext)
+    gameContainer.appendChild(btn);
     btn.addEventListener("click", destroySplash)
   }
 

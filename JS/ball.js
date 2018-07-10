@@ -5,6 +5,7 @@ function Ball(ctx,canvasWidth,canvasHeight){
   this.positionY = canvasWidth / 2 - this.width / 2;
   this.positionX = 40;
   this.randomMove = Math.floor(Math.random() * 10);
+  this.score = 0;
 
 }
 //column: Math.floor(Math.random() * this.columns),

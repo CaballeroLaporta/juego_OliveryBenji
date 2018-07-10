@@ -1,24 +1,44 @@
-.button{
-  background-image: blue;
+
+*{
+  margin:0;
+  padding: 0;
+}
+
+
+#game-container{
   height: 100vh;
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
+  background-image: url("https://www.mundodeportivo.com/r/GODO/MD/p5/MasQueDeporte/Imagenes/2018/03/05/Recortada/img_cfaneca_20180305-143204_imagenes_md_otras_fuentes_180305_oliver_y_benji-kctD-U441293118361t2F-980x554@MundoDeportivo-Web.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+ 
   
-}
+  }
 
 
-.play-game{
+  h1{
+    width:100%;
+    padding-top: 80px;
+    
+    color: blue;
+    font-size: 80px;
+
+  }
+
+  h2{
+    height:40px;
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+button{
   background-color: green;
-  height: 50px;
-  width: 200px;
   color:white;
-  padding: 10px 20px;
+  padding: 20px 40px;
   font-size: 20px;
+  height: 80px;
 }
 
-canvas {
-  border: 1px solid black;
-}
+
+
