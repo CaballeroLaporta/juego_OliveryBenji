@@ -5,7 +5,7 @@ function Ball(ctx,canvasWidth,canvasHeight){
   this.positionY = canvasWidth / 2 - this.width / 2;
   this.positionX = 40;
   this.randomMove = Math.floor(Math.random() * 10);
-  this.score = 0;
+  //this.score = 0;
 
 }
 //column: Math.floor(Math.random() * this.columns),
@@ -13,13 +13,13 @@ function Ball(ctx,canvasWidth,canvasHeight){
 Ball.prototype._position = function(){
   //this.positionX += 10
   if (this.randomMove <2 ) {
-    this.positionX += 7;
-    this.positionY += -3;
+    this.positionX += 6;
+    this.positionY += -2;
   } else if (this.randomMove >=3 & this.randomMove <=5) {
-    this.positionX += 8;
-    this.positionY += +4;
+    this.positionX += 6;
+    this.positionY += +3;
   } else {
-    this.positionX += 8;
+    this.positionX += 6;
   };
 };
 

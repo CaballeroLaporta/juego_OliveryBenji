@@ -1,10 +1,10 @@
 function Player(ctx,canvasWidth,canvasHeight){
   this.ctx = ctx;
-  this.height = 40;
+  this.height = 60;
   this.width = 40;
   this.positionY = canvasWidth/2 - this.width/2;
-  this.positionX = canvasHeight - this.height* 3;
-  this.score = 0;
+  this.positionX = canvasHeight - this.height* 1.5;
+  //this.score = 0;
 }
 
 
