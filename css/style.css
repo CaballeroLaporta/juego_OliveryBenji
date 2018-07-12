@@ -7,8 +7,7 @@
 
 #game-container{
   height: 100vh;
-  background-image: url("https://www.mundodeportivo.com/r/GODO/MD/p5/MasQueDeporte/Imagenes/2018/03/05/Recortada/img_cfaneca_20180305-143204_imagenes_md_otras_fuentes_180305_oliver_y_benji-kctD-U441293118361t2F-980x554@MundoDeportivo-Web.JPG");
-  background-repeat: no-repeat;
+  background-image: url("../img/play.jpeg");
   background-size: cover;
   background-position: center;
   text-align: center;

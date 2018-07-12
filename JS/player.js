@@ -1,17 +1,20 @@
 function Player(ctx,canvasWidth,canvasHeight){
   this.ctx = ctx;
-  this.height = 60;
-  this.width = 40;
+  this.height = 80;
+  this.width = 60;
   this.positionY = canvasWidth/2 - this.width/2;
   this.positionX = canvasHeight - this.height* 1.5;
-  //this.score = 0;
+  this.image = new Image ();
+  this.image.src = "img/benji.png";
+ 
 }
 
 
 
 Player.prototype._draw = function () {
-  this.ctx.fillStyle="#990000";
-  this.ctx.fillRect(this.positionX,this.positionY,this.width,this.height);
+  // this.ctx.fillStyle="#990000";
+  // this.ctx.fillRect(this.positionX,this.positionY,this.width,this.height);
+  this.ctx.drawImage(this.image,this.positionX,this.positionY,this.width,this.height);
 };
 
 

@@ -10,26 +10,34 @@ function Game(ctx, canvas, cb) {
   this.ball = new Ball(this.ctx,this.width,this.height);
   this.scoreBenji = 0;
   this.scoreOliver = 0;
-  this.attemps = 10;
+  this.attemps = 5;
   this.intervalID = undefined;
+  this.imageCanvas = new Image();
+  this.imageCanvas.src = "img/field.jpg"
+
+
   
 };
 
 //Creación de métodos dentro del constructor Game
+Game
+
 Game.prototype._drawBoard = function() {
-  this.ctx.fillStyle="#00EE00";
-  this.ctx.fillRect(0,0,this.width,this.height); 
+  // this.ctx.fillStyle="#00EE00";
+  // this.ctx.fillRect(0,0,this.width,this.height); 
+  this.ctx.drawImage(this.imageCanvas,0,0,this.width,this.height);
+
 };
 
 Game.prototype._drawPlayerScore = function() {
     this.ctx.font = "16px Arial";
-    this.ctx.fillStyle = "#0095DD";
+    this.ctx.fillStyle = "#000000";
     this.ctx.fillText("BENJI SCORE: "+ this.scoreBenji, 8, 20);
 };
 
 Game.prototype._drawBallScore = function(){
   this.ctx.font = "16px Arial";
-  this.ctx.fillStyle = "#0095DD";
+  this.ctx.fillStyle = "#000000";
   this.ctx.fillText("OLIVER SCORE: "+ this.scoreOliver, 300, 20);
 };
 
@@ -87,6 +95,7 @@ Game.prototype._doFrame = function () {
   this._drawBallScore();
   if (this.ball) {
     this.ball._drawBall();
+    this.ball._drawOliver();
     this.ball._position();
     this._checkCollision();
     this._checkGoal();
@@ -96,9 +105,6 @@ Game.prototype._doFrame = function () {
       this.callback();
     }
 
-    // if(this.ball = null){
-    //   this.callback();
-    // }
   }
   
   if (this.upPressed) { this.player.upMovement() };
