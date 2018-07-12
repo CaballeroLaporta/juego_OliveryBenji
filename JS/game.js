@@ -10,8 +10,9 @@ function Game(ctx, canvas, cb) {
   this.ball = new Ball(this.ctx,this.width,this.height);
   this.scoreBenji = 0;
   this.scoreOliver = 0;
-  this.attemps = 5;
+  this.attemps = 10;
   this.intervalID = undefined;
+  
 };
 
 //Creación de métodos dentro del constructor Game
@@ -42,7 +43,7 @@ Game.prototype._checkGoal = function() {
 }
 
 Game.prototype._generateBallAfter = function() {
-  setTimeout(this._generateNewBall.bind(this), 1000);
+  setTimeout(this._generateNewBall.bind(this), 2000);
 }
 
 Game.prototype._checkCollision = function() {
@@ -50,18 +51,26 @@ Game.prototype._checkCollision = function() {
     this.ball.positionX <= this.player.positionX + this.player.width &&
     this.ball.positionY >= this.player.positionY &&
     this.ball.positionY + this.ball.height <= this.player.positionY + this.player.height){
-
     this.scoreBenji++
     this.ball = null
     this._generateBallAfter();
-    //this.ball = new Ball(this.ctx,this.width,this.height);
-    // setTimeout(this._generateNewBall, 10000);
     console.log("BENJI SCORE: " + this.scoreBenji);
   };
 };
 
-
-
+Game.prototype._checksScores = function() {
+  if(this.ball && this.scoreBenji >= 6) {
+    console.log("Congratulations you won!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver);
+    //this.ball = null;
+    //this.callback();
+  }
+  if(this.ball && this.scoreOliver >= 6){
+    console.log("You suck!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver);
+    //this.ball = null;
+    //this.callback();
+  }
+}
+  
 
 Game.prototype.start = function() {
   this._assignControlsToKeys();
@@ -79,9 +88,12 @@ Game.prototype._doFrame = function () {
     this.ball._position();
     this._checkCollision();
     this._checkGoal();
+    this._checksScores();
+    if(this.attemps === 0){
+      this.ball = null;
+      this.callback();
   }
-  if (this.attemps === 0){
-    this.callback();
+ 
   }
   
   if (this.upPressed) { this.player.upMovement() };
@@ -93,9 +105,9 @@ Game.prototype._doFrame = function () {
 
 Game.prototype._generateNewBall = function() {
   this.ball = new Ball(this.ctx,this.width,this.height);
-  
-  //this.attemps = this.attemps - 1;
+  this.attemps = this.attemps - 1;
 };
+
 
 Game.prototype._assignControlsToKeys = function() {
   document.onkeydown = function (e) {

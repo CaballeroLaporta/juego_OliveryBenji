@@ -1,29 +1,29 @@
 
 function main() {
-  var gameContainer = document.getElementById("game-container")
-  buildSplash()
+  var gameContainer = document.getElementById("game-container");
+  buildSplash();
   
   function buildSplash() {
     var btn = document.createElement("button");
     var text = document.createElement("h1");
     var subtext = document.createElement("h2");
     text.innerText = "Oliver y Benji";
-    subtext.innerText = "The last penalty"
-    btn.innerText = "Start Game"
+    subtext.innerText = "The last penalty";
+    btn.innerText = "Start Game";
     gameContainer.appendChild(text);
-    gameContainer.appendChild(subtext)
+    gameContainer.appendChild(subtext);
     gameContainer.appendChild(btn);
-    btn.addEventListener("click", destroySplash)
+    btn.addEventListener("click", destroySplash);
   }
 
   function destroySplash() {
     var btn = document.querySelector("button")
     btn.remove();
-    buildGame()    
+    buildGame();    
   }
 
   function buildGame() {
-    var canvas = document.createElement("canvas")
+    var canvas = document.createElement("canvas");
     canvas.setAttribute("width", "500");
     canvas.setAttribute("height", "500");
     gameContainer.appendChild(canvas)
