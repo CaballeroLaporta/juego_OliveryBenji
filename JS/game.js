@@ -61,13 +61,15 @@ Game.prototype._checkCollision = function() {
 Game.prototype._checksScores = function() {
   if(this.ball && this.scoreBenji >= 6) {
     console.log("Congratulations you won!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver);
-    //this.ball = null;
-    //this.callback();
+    this.ball = null;
+    this.callback();
+    
   }
   if(this.ball && this.scoreOliver >= 6){
-    console.log("You suck!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver);
-    //this.ball = null;
-    //this.callback();
+    console.log("Game Over, you lose!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver);
+    this.ball = null;
+    this.callback();
+    
   }
 }
   
@@ -92,8 +94,11 @@ Game.prototype._doFrame = function () {
     if(this.attemps === 0){
       this.ball = null;
       this.callback();
-  }
- 
+    }
+
+    // if(this.ball = null){
+    //   this.callback();
+    // }
   }
   
   if (this.upPressed) { this.player.upMovement() };
