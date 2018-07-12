@@ -8,7 +8,7 @@ function main() {
     var text = document.createElement("h1");
     var subtext = document.createElement("h2");
     text.innerText = "Oliver y Benji";
-    subtext.innerText = "The last penalty";
+    subtext.innerText = "The last goal";
     btn.innerText = "Start Game";
     gameContainer.appendChild(text);
     gameContainer.appendChild(subtext);
@@ -40,13 +40,20 @@ function main() {
 
   function buildGameOver() {
     var btn = document.createElement("button");
-    btn.innerText = "Restart Game"
+    btn.innerText = "Restart Game";
+    var div = document.createElement("div");
+    div.className = "game-over";
+    div.innerText = "Game Over"
+    gameContainer.appendChild(div);
+    
     gameContainer.appendChild(btn)
     btn.addEventListener("click", destroyGameOver)
   }
 
   function destroyGameOver() {
     var btn = document.querySelector("button")
+    var div = document.querySelector(".game-over")
+    div.remove();
     btn.remove();
     buildGame();
   }

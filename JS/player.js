@@ -12,8 +12,7 @@ function Player(ctx,canvasWidth,canvasHeight){
 
 
 Player.prototype._draw = function () {
-  // this.ctx.fillStyle="#990000";
-  // this.ctx.fillRect(this.positionX,this.positionY,this.width,this.height);
+ 
   this.ctx.drawImage(this.image,this.positionX,this.positionY,this.width,this.height);
 };
 

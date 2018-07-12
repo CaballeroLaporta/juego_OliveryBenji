@@ -4,9 +4,9 @@ function Ball(ctx,canvasWidth,canvasHeight){
   this.width = 20;
   this.positionY = canvasWidth / 2 - this.width / 2;
   this.positionX = 40;
-  this.randomMove = Math.floor(Math.random() * 10);
-  this.Oliverheight = 80;
-  this.OliverWidth = 60;
+  this.randomMove = Math.floor(Math.random() * 7);
+  this.Oliverheight = 60;
+  this.OliverWidth = 45;
   this.oliverX = 5;
   this.oliverY = canvasWidth / 2 - this.OliverWidth / 2;
   this.imageball = new Image();
@@ -19,17 +19,23 @@ function Ball(ctx,canvasWidth,canvasHeight){
 
 Ball.prototype._position = function(){
   //this.positionX += 10
-  if (this.randomMove <2 ) {
-    this.positionX += 6;
+  if (this.randomMove <1 ) {
+    this.positionX += 7;
     this.positionY += -2;
-  } else if (this.randomMove >=3 & this.randomMove <=5) {
+  } else if(this.randomMove >=1 & this.randomMove <3) {
     this.positionX += 6;
     this.positionY += +3;
+  } else if(this.randomMove >=3 & this.randomMove <5) {
+    this.positionX += 7 
+    this.positionY += -3
+  } else if(this.randomMove >=5 & this.randomMove <6){ 
+    this.positionX += 6
+    this.positionY += +2
   } else {
-    this.positionX += 6;
-  };
-};
-
+    this.positionX += 7
+  }
+}
+ 
 Ball.prototype._drawBall = function() {
   // this.ctx.fillStyle = "#990000";
   // this.ctx.fillRect(this.positionX, this.positionY, this.width, this.height);

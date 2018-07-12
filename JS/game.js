@@ -10,10 +10,12 @@ function Game(ctx, canvas, cb) {
   this.ball = new Ball(this.ctx,this.width,this.height);
   this.scoreBenji = 0;
   this.scoreOliver = 0;
-  this.attemps = 5;
+  this.attemps = 9;
   this.intervalID = undefined;
   this.imageCanvas = new Image();
-  this.imageCanvas.src = "img/field.jpg"
+  this.imageCanvas.src = "img/field.jpg";
+  this.song = new Audio("./songs/song.mp3")
+
 
 
   
@@ -30,15 +32,15 @@ Game.prototype._drawBoard = function() {
 };
 
 Game.prototype._drawPlayerScore = function() {
-    this.ctx.font = "16px Arial";
+    this.ctx.font = "20px Arial";
     this.ctx.fillStyle = "#000000";
-    this.ctx.fillText("BENJI SCORE: "+ this.scoreBenji, 8, 20);
+    this.ctx.fillText("BENJI SCORE: "+ this.scoreBenji, 60, 40);
 };
 
 Game.prototype._drawBallScore = function(){
-  this.ctx.font = "16px Arial";
+  this.ctx.font = "20px Arial";
   this.ctx.fillStyle = "#000000";
-  this.ctx.fillText("OLIVER SCORE: "+ this.scoreOliver, 300, 20);
+  this.ctx.fillText("OLIVER SCORE: "+ this.scoreOliver, 300, 40);
 };
 
 Game.prototype._checkGoal = function() {
@@ -51,7 +53,7 @@ Game.prototype._checkGoal = function() {
 }
 
 Game.prototype._generateBallAfter = function() {
-  setTimeout(this._generateNewBall.bind(this), 2000);
+  setTimeout(this._generateNewBall.bind(this), 1500);
 }
 
 Game.prototype._checkCollision = function() {
@@ -67,18 +69,19 @@ Game.prototype._checkCollision = function() {
 };
 
 Game.prototype._checksScores = function() {
-  if(this.ball && this.scoreBenji >= 6) {
-    console.log("Congratulations you won!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver);
+  if(this.ball && this.scoreBenji >= 5) {
+    var message = "Congratulations you won!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver;
     this.ball = null;
     this.callback();
     
   }
-  if(this.ball && this.scoreOliver >= 6){
-    console.log("Game Over, you lose!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver);
+  if(this.ball && this.scoreOliver >= 5){
+    var message = "Game Over, you lose!!! Result: Benji " + this.scoreBenji +" - Oliver " + this.scoreOliver;
     this.ball = null;
     this.callback();
     
   }
+  return message;
 }
   
 
