@@ -26,18 +26,28 @@ h2{
   height:40px;
   width: 100%;
   font-size: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 button{
 background-color: green;
 color:white;
-padding: 20px 40px;
+padding: 10px 30px;
 font-size: 20px;
 height: 80px;
 }
 
 .game-over{
-font-size: 40px;
+font-size: 30px;
 margin-bottom: 20px;
+}
+
+h3{
+  margin:5px;
+  font-size: 25px;
+  margin-top:20px;
+}
+
+p{
+  font-size: 20px;
 }

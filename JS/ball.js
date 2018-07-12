@@ -20,19 +20,19 @@ function Ball(ctx,canvasWidth,canvasHeight){
 Ball.prototype._position = function(){
   //this.positionX += 10
   if (this.randomMove <1 ) {
-    this.positionX += 7;
-    this.positionY += -2;
+    this.positionX += 5;
+    this.positionY += -1;
   } else if(this.randomMove >=1 & this.randomMove <3) {
     this.positionX += 6;
-    this.positionY += +3;
+    this.positionY += +2;
   } else if(this.randomMove >=3 & this.randomMove <5) {
-    this.positionX += 7 
-    this.positionY += -3
+    this.positionX += 6;
+    this.positionY += -2;
   } else if(this.randomMove >=5 & this.randomMove <6){ 
-    this.positionX += 6
-    this.positionY += +2
+    this.positionX += 6;
+    this.positionY += +2;
   } else {
-    this.positionX += 7
+    this.positionX += 7;
   }
 }
  

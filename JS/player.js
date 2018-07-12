@@ -6,19 +6,16 @@ function Player(ctx,canvasWidth,canvasHeight){
   this.positionX = canvasHeight - this.height* 1.5;
   this.image = new Image ();
   this.image.src = "img/benji.png";
- 
 }
 
 
-
 Player.prototype._draw = function () {
- 
   this.ctx.drawImage(this.image,this.positionX,this.positionY,this.width,this.height);
 };
 
-
 Player.prototype.upMovement = function () {
-  this.positionY -=7
+    this.positionY -=7
+  
 };
 
 Player.prototype.downMovement = function () {
