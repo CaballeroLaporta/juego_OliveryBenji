@@ -53,7 +53,7 @@ function main() {
     btn.innerText = "Restart Game";
     var div = document.createElement("div");
     div.className = "game-over";
-    div.innerText = "The Game is over. \n Thanks for playing!!"
+    div.innerText = "Thanks for playing!!"
     gameContainer.appendChild(div);
     
     gameContainer.appendChild(btn)
